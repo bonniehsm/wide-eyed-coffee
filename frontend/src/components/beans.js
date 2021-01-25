@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import axios from "axios";
 
-export default class Beans extends Component{
+class Beans extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -60,3 +61,7 @@ export default class Beans extends Component{
         )
     }
 }
+
+export default Beans;
+
+ReactDOM.render(<Beans/>, document.getElementById("root"));

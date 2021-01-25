@@ -1,0 +1,1 @@
+import Beans from "./components/beans";
