@@ -19,6 +19,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/beans", {
 //set up routes
 const router = express.Router();
 app.use("/", router);
+
 //"getData" endpoint
 router.route("/getData").get(function(req, res){
     //retrieve all documents from beans collection
