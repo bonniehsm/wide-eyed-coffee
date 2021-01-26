@@ -14,8 +14,11 @@ class Beans extends Component{
         this.getDetails = this.getDetails.bind(this);
     }
 
-    coponentDidMount(){
+    componentDidMount(){
+        console.log(`Beans component did mount`);
         axios.get('http://localhost:4000/getData').then((res) => {
+            console.log(`got data`);
+            console.log(res.data)
             this.setState({
                 data: res.data
             })
@@ -24,6 +27,7 @@ class Beans extends Component{
 
     getDetails(){
         if(!this.state.buttonClicked){
+            console.log(`Button Clicked!`);
             this.setState({
                 buttonClicked: true
             })
@@ -32,30 +36,36 @@ class Beans extends Component{
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div>
-                        <button
-                            onClick={this.getDetails}>
-                                Click
-                        </button>
-                        <div>
-                            {this.state.buttonClicked
-                                ? this.state.data.map(data => {
-                                    return (
-                                        <React.Fragment>
-                                            <p>
-                                                {data.name}
-                                            </p>
-                                            <p>
-                                                {data.description}
-                                            </p>
-                                        </React.Fragment>
-                                    );
-                                })
-                            : null }
-                        </div>
-                    </div>
+            <div className="beans-container">         
+                <button
+                    onClick={this.getDetails}>
+                        Click
+                </button>
+                <div id="data">
+                    {this.state.buttonClicked
+                        ? this.state.data.map(data => {
+                            console.log("data: " + data);
+                            return (
+                                <React.Fragment>
+                                    <p>
+                                        {data.name}
+                                    </p>
+                                    <p>
+                                        {data.description}
+                                    </p>
+                                    <p>
+                                        {data.size}
+                                    </p>
+                                    <p>
+                                        {data.price}
+                                    </p>
+                                    <p>
+                                        {data.country}
+                                    </p>
+                                </React.Fragment>
+                            );
+                        })
+                    : null }
                 </div>
             </div>
         )
@@ -64,4 +74,4 @@ class Beans extends Component{
 
 export default Beans;
 
-ReactDOM.render(<Beans/>, document.getElementById("root"));
+ReactDOM.render(<Beans/>, document.getElementById("beans"));
