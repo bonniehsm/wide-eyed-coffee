@@ -1,10 +1,10 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
-let beans = require("./model");
-
+//const mongoose = require("mongoose");
+//let beans = require("./model");
+const beansRouter = require("./routes/beans");
 
 //set up express server
 const app = express();
@@ -15,23 +15,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 
-
-
 //set up routes
-const router = express.Router();
-app.use("/", router);
+app.use("/beans", beansRouter);
 
-//"getData" endpoint
-router.route("/getData").get(function(req, res){
-    //retrieve all documents from beans collection
-    beans.find({}, function(err, result){
-        if(err){
-            res.send(err);
-        }else{
-            res.send(result);
-        }
-    });
-});
 
 
 /** 
@@ -49,6 +35,21 @@ const connection = mongoose.connection;
 connection.once("open", function(){
     console.log("Connection with MongoDB was successful");
 })
+
+const router = express.Router();
+app.use("/", router);
+
+//"getData" endpoint
+router.route("/getData").get(function(req, res){
+    //retrieve all documents from beans collection
+    beans.find({}, function(err, result){
+        if(err){
+            res.send(err);
+        }else{
+            res.send(result);
+        }
+    });
+});
 */
 
 app.listen(PORT, function(){
