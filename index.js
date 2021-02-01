@@ -14,10 +14,14 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-
 //set up routes
 app.use("/beans", beansRouter);
 
+app.listen(PORT, function(){
+    console.log("Server is running on Port: " + PORT);
+})
+
+module.exports = app;
 
 
 /** 
@@ -51,9 +55,3 @@ router.route("/getData").get(function(req, res){
     });
 });
 */
-
-app.listen(PORT, function(){
-    console.log("Server is running on Port: " + PORT);
-})
-
-module.exports = app;
