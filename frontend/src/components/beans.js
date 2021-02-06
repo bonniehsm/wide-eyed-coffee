@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+//import { response } from "express";
 
 class Beans extends Component{
     constructor(props){
@@ -16,13 +17,21 @@ class Beans extends Component{
 
     componentDidMount(){
         console.log(`Beans component did mount`);
-        axios.get('http://localhost:4000/getData').then((res) => {
-            console.log(`got data`);
-            console.log(res.data)
+        /*
+        axios.get('http://localhost:4000/beans/list').then((res) => {
+            console.log(res.data);
             this.setState({
                 data: res.data
-            })
-        })
+            });
+        });*/
+       
+        fetch("http://localhost:4000/beans/list")
+            .then(response => response.json())
+            .then(responseJson => {
+                this.setState({ data: responseJson.data});
+            }
+        );
+        
     }
 
     getDetails(){
@@ -46,7 +55,7 @@ class Beans extends Component{
                         ? this.state.data.map(data => {
                             console.log("data: " + data);
                             return (
-                                <React.Fragment>
+                                <div key={data._id}>
                                     <p>
                                         {data.name}
                                     </p>
@@ -62,7 +71,7 @@ class Beans extends Component{
                                     <p>
                                         {data.country}
                                     </p>
-                                </React.Fragment>
+                                </div>
                             );
                         })
                     : null }
