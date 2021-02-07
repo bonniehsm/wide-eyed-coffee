@@ -18,14 +18,18 @@ class Beans extends Component{
     componentDidMount(){
         console.log(`Beans component did mount`);
         /*
-        axios.get('http://localhost:4000/beans/list').then((res) => {
+        axios.get('/beans/list').then((res) => {
             console.log(res.data);
             this.setState({
                 data: res.data
             });
         });*/
        
-        fetch("http://localhost:4000/beans/list")
+        fetch("/beans/list", {
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
             .then(response => response.json())
             .then(responseJson => {
                 this.setState({ data: responseJson.data});
