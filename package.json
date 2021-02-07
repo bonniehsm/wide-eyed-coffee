@@ -2,7 +2,7 @@
   "name": "wide-eyed-coffee",
   "version": "1.0.0",
   "description": "Website about all things coffee",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
