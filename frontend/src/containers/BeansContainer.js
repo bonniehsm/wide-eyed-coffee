@@ -37,19 +37,23 @@ class BeansContainer extends Component{
 
     render() {
         const beans = this.state.data;
-        let id = `bean-${beans._id}`;
-        let beansComponents = beans.map((bean, index) => {
-            //model: {"data":{"_id":2,"name":"bean 2","description":"very nice beans","size":"350 g","price":"20","country":"Uganda"}}
-            return(
-                <Bean
-                    key = {`${id}`}
-                    data = {`${bean}`}
-                />
+        let beansComponent;
+
+        if(beans.length > 0){
+            beansComponent = beans.map(bean => 
+                //model: {"data":{"_id":2,"name":"bean 2","description":"very nice beans","size":"350 g","price":"20","country":"Uganda"}}
+                (
+                    <Bean
+                        key = {`bean-${bean._id}`}
+                        data = { bean }
+                    />
+                )
             );
-        });
+        }
+
         return (
-            <div className="beans-container">    
-                { beansComponents }
+            <div className="beans-container">   
+                { beansComponent != undefined ? beansComponent : null }
             </div>
         )
     }

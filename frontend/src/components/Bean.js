@@ -7,30 +7,31 @@ class Bean extends Component{
 
 
     render() {
+        
+        let data = this.props.data;
+        
         return (
             <div className="beans-data">
-                return (
-                    <div>
-                        <p>
-                            {data.name}
-                        </p>
-                        <p>
-                            {data.description}
-                        </p>
-                        <p>
-                            {data.size}
-                        </p>
-                        <p>
-                            {data.price}
-                        </p>
-                        <p>
-                            {data.country}
-                        </p>
-                    </div>
-                );
+                <div>
+                    <p>
+                        {data.name}
+                    </p>
+                    <p>
+                        {data.description}
+                    </p>
+                    <p>
+                        {data.size}
+                    </p>
+                    <p>
+                        {data.price}
+                    </p>
+                    <p>
+                        {data.country}
+                    </p>
+                </div>
             </div>
         )
     }
 }
 
-export default Bean;
+export { Bean };
