@@ -6,7 +6,7 @@ h1 {
     margin: 0;
     padding: 20px;
     color: #cb5171;
-    letter-spacing: 0.4px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: normal;
     padding-bottom: 0;
@@ -16,6 +16,12 @@ h1 {
     margin-top: 0;
     font-style: italic;
     color: #cb5171;
+    z-index: 1;
+}
+
+nav {
+    border-top: 1px solid black;
+    margin-top: -25px;
 }
 
 ul {
@@ -26,4 +32,8 @@ ul {
 li {
     display: inline-block;
     margin: 0 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.4px;
 }
