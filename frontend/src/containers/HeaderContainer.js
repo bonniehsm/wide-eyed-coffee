@@ -13,7 +13,7 @@ class HeaderContainer extends Component {
         return(
             <div className="header-container">
                 <h1>Wide-Eyed Coffee</h1>
-                <p>stay alert, stay sharp</p>
+                <p id="header-subtext">stay alert, stay sharp</p>
             </div>
         )
     }
