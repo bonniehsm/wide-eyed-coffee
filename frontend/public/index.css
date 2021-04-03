@@ -9,3 +9,8 @@ body {
     width: 100%;
     min-height: 130px;
 }
+
+a, a:link:active, a:visited:active {
+    text-decoration: none;
+    color: #252525;
+}
