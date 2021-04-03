@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import '../styles/header.css';
 
 class HeaderContainer extends Component {
     constructor(props){
@@ -12,6 +13,7 @@ class HeaderContainer extends Component {
         return(
             <div className="header-container">
                 <h1>Wide-Eyed Coffee</h1>
+                <p>stay alert, stay sharp</p>
             </div>
         )
     }
@@ -19,4 +21,4 @@ class HeaderContainer extends Component {
 
 export default HeaderContainer;
 
-ReactDOM.render(<HeaderContainer/>, document.getElementById("headercontainer"))
+ReactDOM.render(<HeaderContainer/>, document.getElementById("header"));
