@@ -19,7 +19,7 @@ class HeaderContainer extends Component {
                             <a href="#">About Us</a>
                         </li>
                         <li>
-                            <a href="#">Coffee</a>
+                            <a href="/beans">Coffee</a>
                         </li>
                     </ul>
                 </nav>
