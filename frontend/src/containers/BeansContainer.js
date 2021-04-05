@@ -36,6 +36,7 @@ class BeansContainer extends Component{
 
     render() {
         const beans = this.state.data;
+        console.log(`beans state: ${beans}`);        
         let beansComponent;
 
         if(beans.length > 0){
@@ -49,7 +50,6 @@ class BeansContainer extends Component{
                 )
             );
         }
-
         return (
             <div className="beans-container">   
                 { beansComponent != undefined ? beansComponent : null }
