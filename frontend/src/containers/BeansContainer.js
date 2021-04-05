@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import { Bean } from "../components/Bean";
 
 class BeansContainer extends Component{
@@ -60,5 +59,3 @@ class BeansContainer extends Component{
 }
 
 export default BeansContainer;
-
-ReactDOM.render(<BeansContainer/>, document.getElementById("beanscontainer"));
