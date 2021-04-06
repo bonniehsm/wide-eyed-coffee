@@ -45,4 +45,4 @@ class Bean extends Component{
     }
 }
 
-export { Bean };
+export default Bean;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Bean } from "../components/Bean";
+import Bean from "../components/Bean";
 
 class BeansContainer extends Component{
     constructor(props){
