@@ -12,7 +12,9 @@ class HeaderContainer extends Component {
         return(
             <div className="header-container">
                 <h1>Wide-Eyed Coffee</h1>
-                <p id="header-subtext">stay alert, stay sharp</p>
+                <div className="header-panel">
+                    <span id="header-subtext">stay alert, stay sharp</span>
+                </div>
                 <nav>
                     <ul>
                         <li>
