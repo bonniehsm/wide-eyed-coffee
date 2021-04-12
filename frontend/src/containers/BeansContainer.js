@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Bean from "../components/Bean";
+import '../styles/bean.css';
 
 class BeansContainer extends Component{
     constructor(props){
