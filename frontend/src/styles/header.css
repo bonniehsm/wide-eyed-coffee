@@ -31,6 +31,10 @@ h1 {
     line-height: 1.7rem;
 }
 
+nav {
+    padding-bottom: 1rem;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
